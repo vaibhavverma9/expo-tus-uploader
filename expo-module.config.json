@@ -1,0 +1,9 @@
+{
+  "platforms": ["apple", "android", "web"],
+  "apple": {
+    "modules": ["ExpoTusUploaderModule"]
+  },
+  "android": {
+    "modules": ["expo.modules.tusuploader.ExpoTusUploaderModule"]
+  }
+}

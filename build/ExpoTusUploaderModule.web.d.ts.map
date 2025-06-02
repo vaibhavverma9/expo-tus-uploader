@@ -1,0 +1,1 @@
+{"version":3,"file":"ExpoTusUploaderModule.web.d.ts","sourceRoot":"","sources":["../src/ExpoTusUploaderModule.web.ts"],"names":[],"mappings":"AAAA,OAAO,EAAqB,YAAY,EAAE,MAAM,MAAM,CAAC;AAEvD,OAAO,EAAE,2BAA2B,EAAE,MAAM,yBAAyB,CAAC;AAEtE,cAAM,qBAAsB,SAAQ,YAAY,CAAC,2BAA2B,CAAC;IAC3E,EAAE,SAAW;IACP,aAAa,CAAC,KAAK,EAAE,MAAM,GAAG,OAAO,CAAC,IAAI,CAAC;IAGjD,KAAK;CAGN;;AAED,wBAAiF"}
