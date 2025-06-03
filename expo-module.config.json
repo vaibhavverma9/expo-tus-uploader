@@ -1,6 +1,6 @@
 {
   "name": "expo-tus-uploader",
-  "plugins": "./plugins/withTusKitPodfile.js",
+  "plugins": ["./plugin/withTusKitPodfile"],
   "platforms": ["apple", "android", "web"],
   "apple": {
     "modules": ["ExpoTusUploaderModule"]
