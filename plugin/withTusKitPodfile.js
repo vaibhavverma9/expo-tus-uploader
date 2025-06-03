@@ -9,7 +9,7 @@ module.exports = function withTusKitPodfile(config) {
       const podfilePath = path.join(config.modRequest.platformProjectRoot, 'Podfile');
       let contents = fs.readFileSync(podfilePath, 'utf-8');
 
-      // Ensure use_frameworks! :linkage => :static is added inside the target block
+      // Ensure use_frameworks! is inserted after use_expo_modules!
       if (!contents.includes('use_frameworks! :linkage => :static')) {
         contents = contents.replace(
           /use_expo_modules!\n/,
@@ -17,7 +17,15 @@ module.exports = function withTusKitPodfile(config) {
         );
       }
 
-      // Add Swift version override inside post_install block
+      // Add TUSKit pod inside the target block if missing
+      if (!contents.includes(`pod 'TUSKit'`)) {
+        contents = contents.replace(
+          /target ['"][^'"]+['"] do\n/,
+          match => `${match}  pod 'TUSKit', :git => 'https://github.com/tus/TUSKit.git', :tag => '3.5.0'\n`
+        );
+      }
+
+      // Set Swift version
       if (!contents.includes("config.build_settings['SWIFT_VERSION'] = '5.4'")) {
         contents = contents.replace(
           /post_install do \|installer\|([\s\S]*?)react_native_post_install\(([\s\S]*?)\)\n/,
