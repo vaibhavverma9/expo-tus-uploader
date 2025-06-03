@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.static_framework = true
 
   s.dependency 'ExpoModulesCore'
-  s.dependency 'TUSKit'
+  s.dependency 'TUSKit', :git => 'https://github.com/tus/TUSKit.git'
 
   # Swift/Objective-C compatibility
   s.pod_target_xcconfig = {
